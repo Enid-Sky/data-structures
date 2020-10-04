@@ -11,30 +11,25 @@ def all_houses(filename):
     Arguments:
       - filename (str): the path to a data file
 
-    Return:
+    Return:z
       - set[str]: a set of strings
     """
-#[first_name, last_name, house, advisor, cohort, first_name, last_name, house, advisor, cohort, ]
-    file = open(filename)
+    #  TODO: replace this with your code
+
     houses = set()
-    # loop through lines in file
+    file = open(filename)
+    # loop over each line in file
     for line in file:
-        # removing whitespace
-        line = line.rstrip()
-        # creating a list and split with commas
-        house_names = line.split('|')
+        line = line.rstrip()  # remove extra characters
+        line = line.split("|")  # split into a list
 
-        houses.add(house_names[2])
-        # creating a conditional if the 3rd element is house name is empty, ignore it.
-        # if file[2] == ' ':
-        #     continue
-        # # otherwise, if it is there, add it to our set.
-        # else:
-        # houses.add(file[2])
+        a_house = line[2]  # assign variable to index
 
-    # TODO: replace this with your code
-    # close file
-    filename.close()
+        if a_house == "":  # if there is no house, skip
+            continue
+        else:
+            houses.add(a_house)  # add each house to houses
+
     return houses
 
 
@@ -65,10 +60,26 @@ def students_by_cohort(filename, cohort='All'):
     Return:
       - list[list]: a list of lists
     """
+    # grab file and open it
+    # loop through the file line by line
+    # rstrip file and split into list
+    # make a full name var set to line[0] + line[1]
+    # if line @ -1 will be set to var cohort
+    # if cohort is == G or I , continue
+
+    # if cohort is == 'Fall 2015' append name var to proper var
+    # if cohort is == 'Spring 2016' append name var to proper var
+    # if cohort is == 'Summer 2016' append name var to proper var
+    # if cohort is == 'Winter 2016' append name var  to proper var
+    # append all cohorts to students
 
     students = []
 
     # TODO: replace this with your code
+    file = open(filename)
+    for line in file:
+        line = line.rstrip()
+        line =
 
     return sorted(students)
 
